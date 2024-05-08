@@ -1,10 +1,20 @@
 const express = require('express');
-const app = express();
+const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 
-app.use(express.json());
-app.use('api/users', userRoutes);
+const port = 8080;
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
-});
+const app = express();
+
+app.use(express.json());
+app.use('/api', userRoutes);
+
+mongoose.connect('mongodb://localhost:27017/userDB')
+  .then(() => {
+    app.listen(port, () => {
+        console.log(`Server listening on port ${port}`);
+    });
+  })
+  .catch(error => {
+    console.error(error);
+  });
