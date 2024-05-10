@@ -1,0 +1,21 @@
+GET http://localhost:8080/api/users
+
+###
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "firstName": "Gideon",
+    "lastName": "Bature",
+    "age": 23,
+    "occupation": "Software Engineer",
+    "dateOfBirth": "2000-03-13",
+    "hobbies": [
+        "reading",
+        "singing",
+        "cooking"
+    ],
+    "email": "gidn@ben.com",
+    "password": "123456"
+}
