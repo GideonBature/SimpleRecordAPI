@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
+const  authRoutes = require('./routes/authRoutes');
 const { port } = require('./config/config');
 
 // create express app
@@ -16,6 +17,7 @@ app.use(cors( {
 } ));
 
 app.use('/api', userRoutes);
+app.use('/api', authRoutes);
 
 // connect to database
 connectDB()
