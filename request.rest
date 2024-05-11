@@ -19,3 +19,36 @@ Content-Type: application/json
     "email": "gidn@ben.com",
     "password": "123456"
 }
+
+###
+
+POST http://localhost:8080/api/user/signup
+Content-Type: application/json
+
+{
+    "firstName": "Gideon",
+    "lastName": "Bature",
+    "email": "gidn@bene.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:8080/api/user/signin
+Content-Type: application/json
+
+{
+    "email": "gidn@bene.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:8080/api/user/signout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNmMjM1Mjk5NDI4MTUyODc0NzUwZjciLCJpYXQiOjE3MTU0MTczNDMsImV4cCI6MTcxNTUwMzc0M30.6Uy9FSzjf7Ki746ro6zArGSseB9sfz-FK1nxJmy-sxs
+
+{
+    "email": "gidn@bene.com",
+    "password": "123456"
+}
