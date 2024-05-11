@@ -38,11 +38,13 @@ const validateLogin = [
     }
 ]
 
-const validateLogout = (req, res, next) => {
-    if (!req.headers.authorization) {
-        return res.status(401).json({ message: 'Unauthorized' });
+const validateLogout = [
+    (req, res, next) => {
+        if (!req.headers.authorization) {
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+        next();
     }
-    next();
-}
+]
 
-module.exports = { validateRegistration, validateLogin };
+module.exports = { validateRegistration, validateLogin, validateLogout };
