@@ -2,6 +2,10 @@ GET http://localhost:8080/api/users
 
 ###
 
+GET http://localhost:8080/api/user/663e5d706fd51bd6484b904c
+
+###
+
 POST http://localhost:8080/api/users
 Content-Type: application/json
 
@@ -52,3 +56,34 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNmM
     "email": "gidn@bene.com",
     "password": "123456"
 }
+
+###
+PUT http://localhost:8080/api/user/663f235299428152874750f7
+Content-Type: application/json
+
+{
+    "firstName": "Funom",
+    "lastName": "Simon",
+    "age": 23,
+    "occupation": "Data Engineer",
+    "dateOfBirth": "2000-03-13",
+    "hobbies": [
+        "coding",
+        "programming",
+        "studying"
+    ],
+    "email": "infoaboutgideon@gmail.com",
+    "password": "123456"
+}
+
+###
+
+DELETE http://localhost:8080/api/user/663f235299428152874750f7
+Content-Type: application/json
+
+{
+    "email": "infoaboutgideon@gmail.com",
+    "password": "123456"
+}
+
+###
