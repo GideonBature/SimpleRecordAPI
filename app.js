@@ -4,6 +4,8 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const  authRoutes = require('./routes/authRoutes');
 const { port } = require('./config/config');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 // create express app
 const app = express();
@@ -18,6 +20,8 @@ app.use(cors( {
 
 app.use('/api', userRoutes);
 app.use('/api', authRoutes);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // connect to database
 connectDB()
